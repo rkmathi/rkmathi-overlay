@@ -1,0 +1,9 @@
+Ryuichi KAWAMATA(@rkmathi)'s ebuild
+
+dev-python/python-twoauth
+* This is library for using twitter written in Python.
+* This library is dependent net-misc/gwit.
+
+net-misc/gwit
+* This is a Twitter Client writtein in PyGTK.
+* This software is dependend on dev-pyhon/pyhon-twoauth.
