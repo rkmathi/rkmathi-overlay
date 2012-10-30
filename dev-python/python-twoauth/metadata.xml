@@ -2,7 +2,8 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 <maintainer>
-	<email>mail@rkmathi.net</email>
+    <email>i@rkmathi.net</email>
+    <name>Ryuichi KAWAMATA</name>
 </maintainer>
 </pkgmetadata>
 

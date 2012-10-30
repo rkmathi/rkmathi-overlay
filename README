@@ -1,9 +1,12 @@
 Ryuichi KAWAMATA(@rkmathi)'s ebuild
 
-dev-python/python-twoauth
-* This is library for using twitter written in Python.
-* This library is dependent net-misc/gwit.
+x11-wm/qtile
+* This is a tiling window manager written in Python.
 
 net-misc/gwit
 * This is a Twitter Client writtein in PyGTK.
-* This software is dependend on dev-pyhon/pyhon-twoauth.
+* This package is dependend on dev-pyhon/pyhon-twoauth.
+
+dev-python/python-twoauth
+* This is library for using twitter written in Python.
+
