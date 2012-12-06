@@ -10,11 +10,7 @@ inherit ruby-fakegem
 DESCRIPTION="A binary search library for Ruby"
 HOMEPAGE="http://0xcc.net/ruby-bsearch/"
 
-RUBY_FAKEGEM_TASK_TEST=""
 RUBY_FAKEGEM_TASK_DOC=""
-RUBY_FAKEGEM_EXTRADOC="History.md README.md Upgrade.md"
-
-RUBY_FAKEGEM_EXTRAINSTALL="templates"
 
 LICENSE="Ruby"
 SLOT="0"
