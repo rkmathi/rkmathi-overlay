@@ -4,7 +4,7 @@
 
 EAPI=4
 
-inherit python git eutils
+inherit python git-2 eutils
 
 DESCRIPTION="Poweful Twitter client for Linux using PyGTK"
 HOMEPAGE="http://sourceforge.jp/projects/gwit/"

@@ -1,12 +1,14 @@
 Ryuichi KAWAMATA(@rkmathi)'s ebuild
 
 x11-wm/qtile
-* This is a tiling window manager written in Python.
+* a tiling window manager written in Python.
 
 net-misc/gwit
-* This is a Twitter Client writtein in PyGTK.
-* This package is dependend on dev-pyhon/pyhon-twoauth.
+* a Twitter Client writtein in PyGTK.
 
 dev-python/python-twoauth
-* This is library for using twitter written in Python.
+* a library for using twitter written in Python.
+
+dev-ruby/bsearch
+* a library for bsearch
 

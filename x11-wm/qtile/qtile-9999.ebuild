@@ -4,7 +4,7 @@
 
 EAPI=4
 
-inherit python git distutils
+inherit python git-2 distutils
 
 DESCRIPTION="A full-featured, pure-Python tiling window manager"
 HOMEPAGE="http://qtile.org"

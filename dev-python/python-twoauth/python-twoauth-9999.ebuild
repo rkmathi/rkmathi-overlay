@@ -7,7 +7,7 @@ EAPI=4
 DESCRIPTION="OAuth supported Twitter library"
 HOMEPAGE="https://github.com/techno/python-twoauth"
 
-inherit python git distutils
+inherit python git-2 distutils
 
 LICENSE="MIT"
 SLOT="0"
