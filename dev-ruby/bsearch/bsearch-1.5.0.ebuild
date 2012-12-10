@@ -17,6 +17,12 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+all_ruby_prepare() {
+	sed -i 's/ruby/\$\{RUBY\}/' test/test.sh || die
+}
+
 each_ruby_test() {
-	${RUBY} -S rspec spec || die "Tests failed."
+	pushd test
+	RUBY=${RUBY} sh test.sh
+	popd
 }
