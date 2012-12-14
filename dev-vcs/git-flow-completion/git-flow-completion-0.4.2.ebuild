@@ -13,11 +13,11 @@ HOMEPAGE="https://github.com/bobthecow/git-flow-completion"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE=""
+IUSE="+bash-completion zsh-completion"
 
 RDEPEND="app-shells/bash
-	app-shells/zsh
-	${DEPEND}"
+zsh-completion? ( app-shells/zsh )
+${DEPEND}"
 
 S="${WORKDIR}/${GITHUB_USER}-${PN}"
 
@@ -25,8 +25,10 @@ src_install() {
 	insinto /etc/bash_completion.d
 	doins git-flow-completion.bash
 
-	insinto /etc/zsh
-	doins git-flow-completion.zsh
+	if use zsh-completion; then
+		insinto /etc/zsh
+		doins git-flow-completion.zsh
+	fi
 }
 
 pkg_postinst() {
