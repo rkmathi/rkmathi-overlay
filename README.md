@@ -7,7 +7,8 @@ dev-vcs/gitflow
 
 > dev-libs/shflags
 
-> dev-vcs/git-flow-completion
+
+dev-vcs/git-flow-completion
 
 
 net-misc/gwit

@@ -11,6 +11,7 @@ GITHUB_USER="nvie"
 GITHUB_TAG="${PV}"
 SRC_URI="https://github.com/${GITHUB_USER}/${PN}/tarball/${GITHUB_TAG} -> ${P}.tar.gz"
 HOMEPAGE="https://github.com/nvie/gitflow"
+SRC_HASH="5b26edc"
 
 LICENSE="BSD"
 SLOT="0"
@@ -21,6 +22,8 @@ DEPEND=""
 RDEPEND="${DEPEND}
 	>=dev-vcs/git-flow-completion-0.4.2
 	>=dev-libs/shflags-1.0.3"
+
+S="${WORKDIR}/${GITHUB_USER}-${PN}-${SRC_HASH}"
 
 src_prepare() {
 	cd "${WORKDIR}"/${GITHUB_USER}-${PN}-*

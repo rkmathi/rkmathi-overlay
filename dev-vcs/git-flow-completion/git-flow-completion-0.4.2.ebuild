@@ -9,6 +9,7 @@ GITHUB_USER="bobthecow"
 GITHUB_TAG="${PV}"
 SRC_URI="https://github.com/${GITHUB_USER}/${PN}/tarball/${GITHUB_TAG} -> ${P}.tar.gz"
 HOMEPAGE="https://github.com/bobthecow/git-flow-completion"
+SRC_HASH="4f0a2ed"
 
 LICENSE="GPL-3"
 SLOT="0"
@@ -19,7 +20,7 @@ RDEPEND="app-shells/bash
 zsh-completion? ( app-shells/zsh )
 ${DEPEND}"
 
-S="${WORKDIR}/${GITHUB_USER}-${PN}"
+S="${WORKDIR}/${GITHUB_USER}-${PN}-${SRC_HASH}"
 
 src_install() {
 	insinto /etc/bash_completion.d
