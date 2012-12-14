@@ -7,7 +7,7 @@ EAPI=4
 RUBY_FAKEGEM_TASK_DOC=""
 RUBY_FAKEGEM_EXTRADOC="doc/*"
 
-USE_RUBY="ruby18 ruby19 ree18 jruby"
+USE_RUBY="ruby18 ruby19 ree18 jruby rbx"
 
 inherit ruby-fakegem
 DESCRIPTION="A binary search library for Ruby"
