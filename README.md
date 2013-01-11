@@ -1,20 +1,28 @@
 # Ryuichi KAWAMATA(@rkmathi)'s ebuild
 
-app-office/elyxer
+app-office/
 
+> elyxer
 
-dev-ruby/bsearch
+dev-libs/
 
+> shflags
 
-dev-vcs/gitflow
+dev-python/
 
-> dev-libs/shflags
+> python-twoauth
 
+dev-ruby
 
-dev-vcs/git-flow-completion
+> bsearch
 
+dev-vcs/
 
-net-misc/gwit
+> gitflow
 
-> dev-python/python-twoauth
+> git-flow-completion
+
+net-misc/
+
+> gwit
 
