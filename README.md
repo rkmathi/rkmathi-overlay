@@ -2,27 +2,27 @@
 
 app-office/
 
-> elyxer
+> [elyxer](http://elyxer.nongnu.org)
 
 dev-libs/
 
-> shflags
+> [shflags](https://code.google.com/p/shflags)
 
 dev-python/
 
-> python-twoauth
+> [python-twoauth](https://github.com/techno/python-twoauth)
 
 dev-ruby
 
-> bsearch
+> [bsearch](http://rubygems.org/gems/bsearch)
 
 dev-vcs/
 
-> gitflow
+> [gitflow](https://github.com/nvie/gitflow)
 
-> git-flow-completion
+> [git-flow-completion](https://github.com/nvie/git-flow-completion)
 
 net-misc/
 
-> gwit
+> [gwit](http://sourceforge.jp/projects/gwit)
 
