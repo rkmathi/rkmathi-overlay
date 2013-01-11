@@ -1,5 +1,8 @@
 # Ryuichi KAWAMATA(@rkmathi)'s ebuild
 
+app-office/elyxer
+
+
 dev-ruby/bsearch
 
 
