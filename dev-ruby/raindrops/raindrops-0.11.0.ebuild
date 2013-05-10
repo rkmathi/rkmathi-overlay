@@ -12,12 +12,11 @@ inherit ruby-fakegem
 
 DESCRIPTION="real-time stats for preforking Rack servers"
 HOMEPAGE="http://raindrops.bogomips.org/"
-SRC_URI="http://rubygems.org/downloads/${P}.gem"
 
 LICENSE="|| ( LGPL-2.1 LGPL-3 )"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="examples"
 
 each_ruby_configure() {
 	${RUBY} -C ext/${PN} extconf.rb || die "extconf.rb failed"
@@ -32,4 +31,9 @@ each_ruby_test() {
 	for t in test/test_*.rb; do
 		${RUBY} -Ilib $t || die "Test $t failed"
 	done
+}
+
+all_ruby_install() {
+	all_fakegem_install
+	use examples && dodoc -r examples
 }

@@ -12,7 +12,6 @@ inherit ruby-fakegem
 
 DESCRIPTION="kinder, gentler I/O for Ruby"
 HOMEPAGE="http://rubydoc.info/gems/kgio/2.8.0/frames"
-SRC_URI="http://rubygems.org/downloads/${P}.gem"
 
 LICENSE="|| ( LGPL-2.1 LGPL-3 )"
 SLOT="0"
