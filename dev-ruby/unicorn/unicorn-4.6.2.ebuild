@@ -23,32 +23,21 @@ ruby_add_rdepend "
 	>=dev-ruby/kgio-2.6
 	>=dev-ruby/raindrops-0.7
 "
+
 each_ruby_configure() {
-	case ${RUBY} in
-		*ruby19)
-			${RUBY} -C ext/unicorn_http extconf.rb || die "extconf.rb failed"
-		;;
-	esac
+	${RUBY} -C ext/unicorn_http extconf.rb || die "extconf.rb failed"
 }
 
 each_ruby_compile() {
-	case ${RUBY} in
-		*ruby19)
-			emake -C ext/unicorn_http CFLAGS="${CFLAGS} -fPIC" archflag="${LDFLAGS}"
-			cp ext/unicorn_http/*.so lib || die
-		;;
-	esac
+	emake -C ext/unicorn_http CFLAGS="${CFLAGS} -fPIC" archflag="${LDFLAGS}"
+	cp ext/unicorn_http/*.so lib || die
 }
 
 each_ruby_test() {
-	case ${RUBY} in
-		*ruby19)
-			for t1 in test/exec/test_*.rb; do
-				${RUBY} -Ilib $t1 || die "Test $t2 failed"
-			done
-			for t2 in test/unit/test_*.rb; do
-				${RUBY} -Ilib $t2 || die "Test $t2 failed"
-			done
-		;;
-	esac
+	for t1 in test/exec/test_*.rb; do
+		${RUBY} -Ilib $t1 || die "Test $t2 failed"
+	done
+	for t2 in test/unit/test_*.rb; do
+		${RUBY} -Ilib $t2 || die "Test $t2 failed"
+	done
 }
