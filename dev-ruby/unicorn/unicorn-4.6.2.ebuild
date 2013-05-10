@@ -6,7 +6,7 @@ EAPI=5
 USE_RUBY="ruby19"
 
 RUBY_FAKEGEM_TASK_DOC=""
-RUBY_FAKEGEM_EXTRADOC="README Documentation/*"
+RUBY_FAKEGEM_EXTRADOC="README"
 
 inherit ruby-fakegem
 
@@ -39,6 +39,6 @@ each_ruby_test() {
 
 all_ruby_install() {
 	all_fakegem_install
-	doman man/man1/*.1
+	doman man/man1/*
 	use examples && dodoc -r examples
 }
