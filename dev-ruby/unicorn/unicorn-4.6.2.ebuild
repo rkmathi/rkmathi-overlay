@@ -6,7 +6,7 @@ EAPI=5
 USE_RUBY="ruby19"
 
 RUBY_FAKEGEM_TASK_DOC=""
-RUBY_FAKEGEM_EXTRADOC="Documentation/*"
+RUBY_FAKEGEM_EXTRADOC="README Documentation/*"
 
 inherit ruby-fakegem
 

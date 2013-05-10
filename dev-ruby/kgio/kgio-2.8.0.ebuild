@@ -25,5 +25,11 @@ each_ruby_configure() {
 
 each_ruby_compile() {
 	emake -C ext/${PN} CFLAGS="${CFLAGS} -fPIC" archflag="${LDFLAGS}"
-	cp ext/${PN}/*.so lib || die
+	cp ext/${PN}/*.so lib || die "Copying ext to lib failed"
+}
+
+each_ruby_test() {
+	for t in test/test_*.rb; do
+		${RUBY} -Ilib $t || die "Test $t failed"
+	done
 }
