@@ -16,6 +16,8 @@ dev-ruby
 
 > [bsearch](http://rubygems.org/gems/bsearch)
 
+> [unicorn](http://rubygems.org/gems/unicorn)
+
 dev-vcs/
 
 > [gitflow](https://github.com/nvie/gitflow)
