@@ -6,7 +6,7 @@ EAPI=5
 USE_RUBY="ruby19"
 
 RUBY_FAKEGEM_TASK_DOC=""
-RUBY_FAKEGEM_EXTRADOC="Documentation/*"
+RUBY_FAKEGEM_EXTRADOC="README Documentation/*"
 
 inherit ruby-fakegem
 
@@ -16,7 +16,7 @@ HOMEPAGE="http://unicorn.bogomips.org/"
 LICENSE="|| ( GPL-2 GPL-3 Ruby )"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="examples"
 
 ruby_add_rdepend "
 	dev-ruby/rack
@@ -29,15 +29,21 @@ each_ruby_configure() {
 }
 
 each_ruby_compile() {
-	emake -C ext/unicorn_http CFLAGS="${CFLAGS} -fPIC" archflag="${LDFLAGS}"
+	emake -C ext/unicorn_http V=1 CFLAGS="${CFLAGS} -fPIC" ARCH_FLAG="${LDFLAGS}"
 	cp ext/unicorn_http/*.so lib || die
 }
 
 each_ruby_test() {
-	for t1 in test/exec/test_*.rb; do
-		${RUBY} -Ilib $t1 || die "Test $t2 failed"
-	done
-	for t2 in test/unit/test_*.rb; do
-		${RUBY} -Ilib $t2 || die "Test $t2 failed"
-	done
+	${RUBY} -Ilib test/test_helper.rb || die "Test failed"
+}
+
+each_ruby_install() {
+	all_fakegem_install
+
+	doman man/man1/*.1 || die
+
+	if use examples; then
+		docinto examples
+		dodoc examples/* || die "Install examples failed"
+	fi
 }
