@@ -16,7 +16,7 @@ HOMEPAGE="http://unicorn.bogomips.org/"
 LICENSE="|| ( GPL-2 GPL-3 Ruby )"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="examples"
 
 ruby_add_rdepend "
 	dev-ruby/rack
@@ -25,19 +25,20 @@ ruby_add_rdepend "
 "
 
 each_ruby_configure() {
-	${RUBY} -C ext/unicorn_http extconf.rb || die "extconf.rb failed"
+	${RUBY} -C ext/unicorn_http extconf.rb || die "Configure extconf.rb failed"
 }
 
 each_ruby_compile() {
-	emake -C ext/unicorn_http CFLAGS="${CFLAGS} -fPIC" archflag="${LDFLAGS}"
-	cp ext/unicorn_http/*.so lib || die
+	emake -C ext/unicorn_http V=1 CFLAGS="${CFLAGS} -fPIC" ARCH_FLAG="${LDFLAGS}"
+	cp ext/unicorn_http/*.so lib || die "Copy ext to lib failed"
 }
 
 each_ruby_test() {
-	for t1 in test/exec/test_*.rb; do
-		${RUBY} -Ilib $t1 || die "Test $t2 failed"
-	done
-	for t2 in test/unit/test_*.rb; do
-		${RUBY} -Ilib $t2 || die "Test $t2 failed"
-	done
+	${RUBY} -Ilib test/test_helper.rb || die "Test failed"
+}
+
+all_ruby_install() {
+	all_fakegem_install
+	doman man/man1/*.1
+	use examples && dodoc -r examples
 }
